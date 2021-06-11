@@ -1,3 +1,3 @@
-# COMP-2210
+# COMP-2210 - Fundamentals of Computing II
 
 In this course, you will learn about developing programs that use data structures and collections to efficiently store data. Emphasis will be placed on the interplay between effective data structures and efficient algorithms.
