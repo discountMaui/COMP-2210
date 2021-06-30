@@ -4,7 +4,12 @@ import org.junit.Before;
 import org.junit.Test;
 import java.util.Iterator;
 
-
+ /**
+ * Test cases.
+ * @author Chase Hopkins (ceh0136@auburn.edu)
+ * @version 2021-06-29
+ *
+ */
 public class LinkedSetTest {
 
 
@@ -13,13 +18,6 @@ public class LinkedSetTest {
    @Before public void setUp() {
    }
 
-
-   /** A test that always fails. 
-   @Test public void defaultTest() {
-      Assert.assertEquals("Default test added by jGRASP. Delete "
-            + "this test once you have added your own.", 0, 1);
-   } **/
-   
    @Test public void ContainTest1() {
       Set<Integer> set = new LinkedSet<Integer>();
       boolean expected = true;
@@ -113,7 +111,7 @@ public class LinkedSetTest {
       set.add(3);
       set.add(10);
       
-      LinkedSet<Integer> clone = new LinkedSet<Integer>();
+      LinkedSet<Integer> copy = new LinkedSet<Integer>();
       Set<Integer> expected = new LinkedSet<Integer>();
       
       expected.add(1);
@@ -225,7 +223,7 @@ public class LinkedSetTest {
    
    @Test public void UnionTest() {
       LinkedSet<Integer> newSet = new LinkedSet<Integer>();
-      LinkedSet<Integer> arrClone = new LinkedSet<Integer>();
+      LinkedSet<Integer> newSet2 = new LinkedSet<Integer>();
       
       Set<Integer> expected = new LinkedSet<Integer>();
        
@@ -233,9 +231,9 @@ public class LinkedSetTest {
       newSet.add(1);
       newSet.add(3);
       
-      arrClone.add(6);
-      arrClone.add(4);
-      arrClone.add(5);
+      newSet2.add(6);
+      newSet2.add(4);
+      newSet2.add(5);
       
       expected.add(1);
       expected.add(2);
@@ -244,8 +242,8 @@ public class LinkedSetTest {
       expected.add(5);
       expected.add(6);
       
-      Set<Integer> actual = arrClone.union(newSet);
-      String wattba = actual.toString();
+      Set<Integer> actual = newSet2.union(newSet);
+      String what = actual.toString();
       Assert.assertTrue(expected.equals(actual)); 
    }
    
@@ -289,6 +287,7 @@ public class LinkedSetTest {
    }
    
    @Test public void EqualsTestWithSameSizeDifNums2() {
+   
       Set<Integer> newSet = new LinkedSet<Integer>();
       boolean expected = false;
       newSet.add(2);
@@ -307,6 +306,7 @@ public class LinkedSetTest {
    } 
    
    @Test public void EqualsTestWithSameSizeSameNum() {
+   
       Set<Integer> newSet = new LinkedSet<Integer>();
       boolean expected = true;
       newSet.add(2);
@@ -323,6 +323,7 @@ public class LinkedSetTest {
    }
    
    @Test public void EqualsTestWithSameSizeDifNums3() {
+   
       LinkedSet<Integer> newSet = new LinkedSet<Integer>();
       boolean expected = true;
       newSet.add(1);
@@ -339,8 +340,9 @@ public class LinkedSetTest {
    }
    
    @Test public void UnionSetTest() {
+   
       Set<Integer> newSet = new LinkedSet<Integer>();
-      Set<Integer> arrClone = new LinkedSet<Integer>();
+      Set<Integer> newSet2 = new LinkedSet<Integer>();
       
       Set<Integer> expected = new LinkedSet<Integer>();
        
@@ -348,9 +350,9 @@ public class LinkedSetTest {
       newSet.add(1);
       newSet.add(3);
       
-      arrClone.add(6);
-      arrClone.add(4);
-      arrClone.add(5);
+      newSet2.add(6);
+      newSet2.add(4);
+      newSet2.add(5);
        
       expected.add(1);
       expected.add(2);
@@ -359,13 +361,15 @@ public class LinkedSetTest {
       expected.add(5);
       expected.add(6);
        
-      Set<Integer> actual = arrClone.union(newSet);
+      Set<Integer> actual = newSet2.union(newSet);
+      
       Assert.assertTrue(expected.equals(actual)); 
    }
    
    @Test public void IntersectonTest() {
+   
       LinkedSet<Integer> newSet = new LinkedSet<Integer>();
-      LinkedSet<Integer> arrClone = new LinkedSet<Integer>();
+      LinkedSet<Integer> newSet2 = new LinkedSet<Integer>();
       
       Set<Integer> expected = new LinkedSet<Integer>();
       
@@ -376,20 +380,21 @@ public class LinkedSetTest {
       newSet.add(6);
       newSet.add(5);
       
-      arrClone.add(6);
-      arrClone.add(4);
-      arrClone.add(5);
+      newSet2.add(6);
+      newSet2.add(4);
+      newSet2.add(5);
       
       expected.add(4);
       expected.add(5);
       expected.add(6);
       
-      Set<Integer> actual = newSet.intersection(arrClone);
-      String wattba = actual.toString();
+      Set<Integer> actual = newSet.intersection(newSet2);
+      String what = actual.toString();
       Assert.assertTrue(expected.equals(actual));
    }
    
    @Test public void DescendingIteratorTest() {
+   
       LinkedSet<Integer> set = new LinkedSet<Integer>();
       
       set.add(1);
@@ -399,11 +404,11 @@ public class LinkedSetTest {
       set.add(5);
       set.add(6);
       
-      Iterator<Integer> wat = set.descendingIterator();
-      Iterator<Integer> wattba = set.descendingIterator();
+      Iterator<Integer> wait = set.descendingIterator();
+      Iterator<Integer> what = set.descendingIterator();
       
-      while (wattba.hasNext()) {
-         System.out.print(wattba.next());
+      while (what.hasNext()) {
+         System.out.print(what.next());
       }
    }
    
@@ -414,37 +419,52 @@ public class LinkedSetTest {
       set.add("B");
       set.add("C");
       
-      Iterator<Set<String>> wat = set.powerSetIterator();
-      Iterator<Set<String>> wattba = set.powerSetIterator();
+      Iterator<Set<String>> wait = set.powerSetIterator();
+      Iterator<Set<String>> what = set.powerSetIterator();
       
-      while (wattba.hasNext()) {
-         System.out.print(wattba.next());
+      while (what.hasNext()) {
+         System.out.print(what.next());
       }
    } 
    
    @Test public void ContainsTest() {
+   
       Set<Integer> set = new LinkedSet<Integer>();
+      
       boolean expected = false;
+      
       set.contains(4);
+      
       set.add(4);
+      
       set.contains(4);
+      
       set.add(1);
       set.add(5);
       set.add(3);
       set.add(1);
       set.add(2);
+      
       set.contains(3);
+      
       set.remove(4);
+      
       set.contains(4);
+      
       set.remove(1);
       set.remove(5);
+      
       boolean actual = set.contains(5);
+      
       Assert.assertEquals(expected, actual);
    }
    
    @Test public void RemoveTest2() {
+   
       Set<Integer> set = new LinkedSet<Integer>();
+      
       int expected = 1;
+      
       set.add(4);
       set.add(1);
       set.add(5);
@@ -458,6 +478,7 @@ public class LinkedSetTest {
       set.remove(2);
       
       int actual = set.size();
+      
       Assert.assertEquals(expected, actual);
    }
    

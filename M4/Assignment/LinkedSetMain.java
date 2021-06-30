@@ -1,6 +1,9 @@
 import java.util.Iterator;
+
 /**
 * driver class.
+* @author Chase Hopkins 
+* @version 2021-06-29
 */
 public class LinkedSetMain {
  
